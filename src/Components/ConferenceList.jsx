@@ -3,6 +3,10 @@ import { Box, Heading, Text, Image, IconButton, Flex } from '@chakra-ui/react';
 import { AtSignIcon, CalendarIcon, ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons';
 import axios from 'axios';
 
+function formatDateTime(dateTime) {
+  const options = { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', hour12: true };
+  return new Date(dateTime).toLocaleString('en-US', options);
+}
 function ConferenceList() {
   const [conferences, setConferences] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -40,10 +44,7 @@ function ConferenceList() {
         <Image src={conference.banner_image} alt={conference.title} maxW="100%" borderRadius="md" mt={2} />
         <Flex alignItems="center" mt={2} justifyContent="center">
   <IconButton icon={<CalendarIcon />} bg="gray.300" size="sm" borderRadius="full" />
-  <Text ml={2} color="white" fontFamily="Charis SIL" >
-    {new Date(conference.date_time).toLocaleDateString()}{' '}
-    {new Date(conference.date_time).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
-  </Text>
+  <Text fontFamily="Charis SIL" ml={2} color="white">{formatDateTime(conference.date_time)}</Text>
 </Flex>
         <Text color="white" mt={2} fontFamily={'Charis SIL'} textAlign="center">{conference.description}</Text>
         <Flex alignItems="center" mt={2} justifyContent="center">
