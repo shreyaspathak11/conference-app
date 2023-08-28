@@ -36,7 +36,7 @@ function ConferenceList() {
   const conference = conferences[currentIndex];
 
   return (
-    <Flex justify="center" alignItems="center" height="100vh" bgGradient="linear(to-r, teal.500, blue.500)">
+    <Flex justify="center" alignItems="center" height="100vh" bgGradient="linear(to-r, red.500, blue.500)">
       <Box borderWidth="1px" borderRadius="lg" p={4} bgColor={"blackAlpha.300"} boxShadow="lg" position="relative" maxWidth="400px">
         <IconButton icon={<ChevronLeftIcon />} onClick={handlePrev} position="absolute" top="50%" left={2} transform="translateY(-50%)" size="md" />
         <IconButton icon={<ChevronRightIcon />} onClick={handleNext} position="absolute" top="50%" right={2} transform="translateY(-50%)" size="md" />
