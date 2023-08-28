@@ -48,11 +48,11 @@ function ConferenceList() {
 </Flex>
         <Text color="white" mt={2} fontFamily={'Charis SIL'} textAlign="center">{conference.description}</Text>
         <Flex alignItems="center" mt={2} justifyContent="center">
-          <Image src={conference.organiser_icon} alt={conference.organiser_name} maxW="10%" borderRadius="full" />
+          <Image src={conference.organiser_icon} alt={conference.organiser_name} maxW="20%" borderRadius="full" />
           <Text fontFamily="Charis SIL" ml={2} color="white"> {conference.organiser_name}</Text>
         </Flex>
         <Flex alignItems="center" mt={2} justifyContent="center" fontFamily={"Charis SIL"}>
-          <IconButton icon={<AtSignIcon />} bg="gray.300" size="sm" borderRadius="full" />
+          <IconButton icon={<AtSignIcon />} bg="gray.200" size="sm" borderRadius="full" />
           <Text ml={2} color="white"> {conference.venue_name}, {conference.venue_city}, {conference.venue_country}</Text>
         </Flex>
       </Box>
